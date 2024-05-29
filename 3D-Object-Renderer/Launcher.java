@@ -7,8 +7,8 @@ public class Launcher extends JFrame {
 	
 
 	public Launcher() {
-        setTitle("LWJGL with JAWT");
-        setSize(500, 100);
+        setTitle("3D Object Renderer");
+        setSize(500, 70);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -17,25 +17,22 @@ public class Launcher extends JFrame {
 
         JPanel controlPanel = new JPanel();
         JButton renderCubeButton = new JButton("Render Cube");
-        JButton renderSphereButton = new JButton("Render Sphere");
         JButton renderPyramidButton = new JButton("Render Pyramid");
+        JButton renderSphereButton = new JButton("Render Sphere");
 
          renderCubeButton.addActionListener(e -> windowManager.setShapeToRender("cube"));
          renderSphereButton.addActionListener(e -> windowManager.setShapeToRender("sphere"));
          renderPyramidButton.addActionListener(e -> windowManager.setShapeToRender("pyramid"));
 
         controlPanel.add(renderCubeButton);
-        controlPanel.add(renderSphereButton);
         controlPanel.add(renderPyramidButton);
+        controlPanel.add(renderSphereButton);
 
         add(controlPanel, BorderLayout.SOUTH);
     }
 
-	
 
 	public static void main(String[] args) {
-		//windowManager = new WindowManager("Simple 3D Object Renderer", 1600, 900, false);
-		
 
 		SwingUtilities.invokeLater(() -> {
             Launcher frame = new Launcher();

@@ -21,7 +21,7 @@ public class WindowManager extends Canvas {
     private int width, height;
     private long window;
     private boolean vSync;
-    private String shapeToRender = "cube"; // Default shape
+    private String shapeToRender = "cube"; 
     private InputHandler inputHandler;
     private CountDownLatch latch = new CountDownLatch(1);
 
@@ -33,7 +33,7 @@ public class WindowManager extends Canvas {
 
         new Thread(this::init).start();
         try {
-            latch.await(); // Wait for the OpenGL context to be initialized
+            latch.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class WindowManager extends Canvas {
         GL.createCapabilities();
         glfwSwapInterval(vSync ? 1 : 0);
         glfwShowWindow(window);
-        latch.countDown(); // Signal that the OpenGL context is initialized
+        latch.countDown(); 
 
         loop();
     }

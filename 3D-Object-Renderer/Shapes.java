@@ -5,7 +5,7 @@ public class Shapes {
     public static void renderCube(float x, float y, float z, float size, float[] color) {
         GL11.glPushMatrix();
         GL11.glTranslatef(x, y, z);
-        GL11.glColor3f(color[0], color[1], color[2]);
+        GL11.glColor3f(1.0f, 0.0f, 1.0f); 
         GL11.glBegin(GL11.GL_QUADS);
         
         // Front face
@@ -51,7 +51,7 @@ public class Shapes {
     public static void renderSphere(float x, float y, float z, float radius, float[] color, int slices, int stacks) {
         GL11.glPushMatrix();
         GL11.glTranslatef(x, y, z);
-        GL11.glColor3f(color[0], color[1], color[2]);
+        GL11.glColor3f(0.0f, 0.749f, 1.0f); 
 
         for (int i = 0; i <= stacks; i++) {
             float lat0 = (float) Math.PI * (-0.5f + (float) (i - 1) / stacks);
@@ -81,7 +81,7 @@ public class Shapes {
     public static void renderPyramid(float x, float y, float z, float size, float[] color) {
         GL11.glPushMatrix();
         GL11.glTranslatef(x, y, z);
-        GL11.glColor3f(color[0], color[1], color[2]);
+        GL11.glColor3f(1.0f, 0.5f, 0.0f); 
 
         GL11.glBegin(GL11.GL_TRIANGLES);
         
