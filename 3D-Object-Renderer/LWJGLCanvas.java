@@ -83,30 +83,18 @@ public class LWJGLCanvas extends Canvas{
     }
 
     private void renderCube() {
-        // Your code to render a cube
+        
         GL11.glBegin(GL11.GL_QUADS);
-        // Define vertices for the cube...
+       
         GL11.glEnd();
     }
 
     private void renderSphere() {
-        // Your code to render a sphere
+        
     }
 
     private void renderPyramid() {
-        // Your code to render a pyramid
+       
     }
 
-    // @Override
-    // public void addNotify() {
-    //     super.addNotify();
-    //     GLFW.glfwMakeContextCurrent(window);
-        
-    // }
-
-    // @Override
-    // public void removeNotify() {
-    //     GLFW.glfwMakeContextCurrent(0);
-    //     super.removeNotify();
-    // }
 }

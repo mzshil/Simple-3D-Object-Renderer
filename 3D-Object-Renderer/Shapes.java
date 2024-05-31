@@ -49,25 +49,26 @@ public class Shapes {
     }
 
     public static void renderSphere(float x, float y, float z, float radius, float[] color, int slices, int stacks) {
+        radius = radius * 0.5f; 
         GL11.glPushMatrix();
         GL11.glTranslatef(x, y, z);
         GL11.glColor3f(0.0f, 0.749f, 1.0f); 
-
+    
         for (int i = 0; i <= stacks; i++) {
             float lat0 = (float) Math.PI * (-0.5f + (float) (i - 1) / stacks);
             float z0 = (float) Math.sin(lat0);
             float zr0 = (float) Math.cos(lat0);
-
+    
             float lat1 = (float) Math.PI * (-0.5f + (float) i / stacks);
             float z1 = (float) Math.sin(lat1);
             float zr1 = (float) Math.cos(lat1);
-
+    
             GL11.glBegin(GL11.GL_QUAD_STRIP);
             for (int j = 0; j <= slices; j++) {
                 float lng = 2 * (float) Math.PI * (float) (j - 1) / slices;
                 float x1 = (float) Math.cos(lng);
                 float y1 = (float) Math.sin(lng);
-
+    
                 GL11.glNormal3f(x1 * zr0, y1 * zr0, z0);
                 GL11.glVertex3f(radius * x1 * zr0, radius * y1 * zr0, radius * z0);
                 GL11.glNormal3f(x1 * zr1, y1 * zr1, z1);
@@ -76,7 +77,7 @@ public class Shapes {
             GL11.glEnd();
         }
         GL11.glPopMatrix();
-    }
+    }    
 
     public static void renderPyramid(float x, float y, float z, float size, float[] color) {
         GL11.glPushMatrix();
